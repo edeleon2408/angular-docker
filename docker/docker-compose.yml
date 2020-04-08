@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+    angular-docker:
+        image: angular-docker
+        container_name: angular-docker
+        ports:
+            - 80:80
+        restart: always     
+        volumes:
+            - /opt/kaizen/assets/images/:/usr/share/nginx/html/kaizen/assets/images/
