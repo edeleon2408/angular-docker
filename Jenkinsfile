@@ -18,7 +18,7 @@ pipeline {
     stage('Build Proyecto'){     
     	 steps{
             echo 'Construyendo el Proyecto'
-            bat 'npm run build'
+            bat 'npm run build -- --prod'
 				
 	   }        	
     }
