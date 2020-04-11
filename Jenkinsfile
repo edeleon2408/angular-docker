@@ -34,7 +34,7 @@ pipeline {
             bat """
                    cd docker
             	   docker-compose up -d
-                   docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
+                   docker rmi \$(docker images --filter "dangling=true" -q --no-trunc)
             	"""            
 	   }        	
     }//fin stage
