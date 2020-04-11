@@ -5,7 +5,7 @@ services:
         image: angular-docker-pruebas
         container_name: angular-docker-pruebas
         ports:
-            - 8087:80
+            - 8088:80
         #networks: 
         #    - angular
         #restart: always     
