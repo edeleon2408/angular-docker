@@ -5,7 +5,14 @@ services:
         image: angular-docker
         container_name: angular-docker
         ports:
-            - 80:80
-        restart: always     
+            - 8087:80
+        #networks: 
+        #    - angular
+        #restart: always     
         volumes:
-            - /opt/kaizen/assets/images/:/usr/share/nginx/html/kaizen/assets/images/
+            - /opt/angularDocker/assets/images/:/usr/share/nginx/html/angularDocker/assets/images/
+
+
+#networks: 
+#    angular:
+#        driver: bridge
