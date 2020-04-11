@@ -5,26 +5,14 @@ pipeline {
     stage('Checkout-Proyecto'){  
     	 steps{
             echo 'Revisando repositorio del Proyecto'
-			git branch: 'pruebas', poll: true, url: 'https://github.com/edeleon2408/jenkins-docker-war.git'
+			git branch: 'master', poll: true, url: 'https://github.com/edeleon2408/angular-docker.git'
          }        	
     }
-    stage('Clean-and-Build-Proyecto'){     
-    	 steps{
-            echo 'Limpiando y Construyendo Proyecto'
-			bat 'mvn clean compile install'
-	   }        	
-    }
-    /*stage('Check-SonarQ-Proyecto'){     
-    	 steps{
-            echo 'Check Codigo en SonarQubw'
-			bat 'mvn sonar:sonar -Dsonar.projectKey=desarrollo-jenkins-docker-war -Dsonar.host.url=http://localhost:9000 -Dsonar.login=44beea01194da61f14d8b8eb5de3374d16b37272'
-	   }        	
-    }*/
     stage('Build-Image-Docker'){     
     	 steps{
             echo 'Construyendo Imagen Docker del Proyecto'
-			bat 'docker build -f docker/Dockerfile -t prueba-jenkins-docker-war .'
-			//bat 'docker rm -f jenkins-docker-api'			
+			bat 'docker build -f docker/Dockerfile -t angular-docker .'
+				
 	   }        	
     }
     /*stage('Deploy-Image-Docker-Hub'){     
