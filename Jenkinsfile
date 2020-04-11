@@ -33,11 +33,9 @@ pipeline {
             echo 'Construyendo Imagen y Contenedor Docker del Proyecto'	
             bat """
                    cd docker
-            	   docker-compose up -d	
-            	"""
-            bat """
+            	   docker-compose up -d
                    docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
-                """
+            	"""            
 	   }        	
     }//fin stage
     
