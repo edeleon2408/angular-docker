@@ -13,7 +13,7 @@ pipeline {
             echo 'Install package and Build Proyecto'
             bat """
                    npm install
-            	   ng build
+            	   npm run build
             	"""
 				
 	   }        	
