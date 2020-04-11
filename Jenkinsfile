@@ -5,7 +5,7 @@ pipeline {
     stage('Checkout-Proyecto'){  
     	 steps{
             echo 'Revisando repositorio del Proyecto'
-			git branch: 'master', poll: true, url: 'https://github.com/edeleon2408/angular-docker.git'
+			git branch: 'pruebas', poll: true, url: 'https://github.com/edeleon2408/angular-docker.git'
          }        	
     }
     stage('Install packages Proyecto'){     
@@ -18,14 +18,14 @@ pipeline {
     stage('Build Proyecto'){     
     	 steps{
             echo 'Construyendo el Proyecto'
-            bat 'npm run build -- --prod'
+            bat 'npm run build'
 				
 	   }        	
     }
     stage('Build-Image-Docker'){     
     	 steps{
             echo 'Construyendo Imagen Docker del Proyecto'            
-			bat 'docker build -f docker/Dockerfile -t angular-docker .'
+			bat 'docker build -f docker/Dockerfile -t angular-docker-pruebas .'
 				
 	   }        	
     }
