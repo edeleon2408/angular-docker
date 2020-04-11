@@ -23,6 +23,6 @@ export class UsuarioService {
   getUsuarios() {
     console.log('entroo a services');
     return this.http.get<{ usuarios: any[] }>(
-      `${this.getUrlService(Endpoint.Usuario)}/listar-usuarios`);
+      `${this.getUrlService(Endpoint.Usuario)}/listar-usuariosbd`);
   }
 }
