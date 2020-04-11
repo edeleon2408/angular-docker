@@ -8,13 +8,17 @@ pipeline {
 			git branch: 'master', poll: true, url: 'https://github.com/edeleon2408/angular-docker.git'
          }        	
     }
-    stage('Install and Build Proyecto'){     
+    stage('Install packages Proyecto'){     
     	 steps{
-            echo 'Install package and Build Proyecto'
-            bat """
-                   npm install
-            	   npm run build
-            	"""
+            echo 'Install package del Proyecto'
+            bat 'npm install'
+				
+	   }        	
+    }
+    stage('Build Proyecto'){     
+    	 steps{
+            echo 'Construyendo el Proyecto'
+            bat 'npm run build'
 				
 	   }        	
     }
