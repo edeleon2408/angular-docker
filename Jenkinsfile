@@ -10,7 +10,7 @@ pipeline {
     }
     stage('Build-Image-Docker'){     
     	 steps{
-            echo 'Construyendo Imagen Docker del Proyecto'
+            echo 'Construyendo Imagen Docker del Proyecto'            
 			bat 'docker build -f docker/Dockerfile -t angular-docker .'
 				
 	   }        	
@@ -35,6 +35,7 @@ pipeline {
                    cd docker
             	   docker-compose up -d	
             	"""
+            bat 'docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 	   }        	
     }//fin stage
     
