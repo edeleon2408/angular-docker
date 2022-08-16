@@ -8,3 +8,8 @@ trigger:
 
 pool:
   name: agent-microservicio
+
+steps:
+- script: |
+    dir
+  displayName: 'comando dir'
