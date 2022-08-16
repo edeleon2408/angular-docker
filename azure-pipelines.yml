@@ -12,4 +12,4 @@ pool:
 steps:
 - script: |
     dir
-  displayName: 'npm install and build'
+  displayName: 'comando dir'
